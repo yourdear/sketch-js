@@ -11,9 +11,11 @@ export function zoomEvents () {
   const zoomer = document.querySelector('#zoom')
   eventDelegate(zoomer, 'click', '.zoom-in:not(disabled), .zoom-out:not(disabled)', function (event) {
     if (this.classList.contains('zoom-in')) {
-      zoomRender(state.zoom - 0.25)
+      if (state.zoom > 0.02) {
+        zoomRender(state.zoom - 0.01)
+      }
     } else {
-      zoomRender(state.zoom + 0.25)
+      zoomRender(state.zoom + 0.01)
     }
     event.stopPropagation()
   })
@@ -65,3 +67,21 @@ function screenPointOnViewerCenter (viewer, screen) {
     y: viewerCenter.y - screenRect.y
   }
 }
+// 鼠标 + ctrl放大缩小设计图
+setTimeout(() => {
+  const screenviewer = document.querySelector('.screen-viewer')
+  screenviewer.addEventListener('mousewheel', function (event) {
+    if (event.ctrlKey === true || event.metaKey) {
+      event.preventDefault()
+      if (event.wheelDelta < 0 || event.detail < 0) {
+        // 鼠标滚轮往下滚动
+        if (state.zoom > 0.02) {
+          zoomRender(state.zoom - 0.01)
+        }
+      } else if (event.wheelDelta > 0 || event.detail > 0) {
+        // 鼠标滚轮往上滚动
+        zoomRender(state.zoom + 0.01)
+      }
+    }
+  }, { passive: false })
+}, 0)
