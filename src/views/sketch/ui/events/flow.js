@@ -4,7 +4,7 @@ import { updateScreen } from '../render/screen'
 import { hideNavBar, showNavBar } from './tab'
 import { alignElement, Edge } from './alignElement'
 
-export var flowMode = undefined
+export let flowMode
 
 export function flowEvents () {
   flowModeSwitchEvents()
@@ -36,10 +36,12 @@ function flowClickEvents () {
 }
 
 function flowModeSwitchEvents () {
-  document.querySelector('#flow-mode').addEventListener('change', function () {
-    setFlowMode((this).checked)
-    updateURLHash()
-  })
+  if (document.querySelector('#flow-mode')) {
+    document.querySelector('#flow-mode').addEventListener('change', function () {
+      setFlowMode((this).checked)
+      updateURLHash()
+    })
+  }
 }
 
 export function setFlowMode (enabled) {
@@ -49,7 +51,9 @@ export function setFlowMode (enabled) {
   const currentRect = screen.getBoundingClientRect()
   const inputFlowMode = document.querySelector('#flow-mode')
   // set checked won't trigge change event
-  inputFlowMode.checked = enabled
+  if (inputFlowMode) {
+    inputFlowMode.checked = enabled
+  }
   const hideOnFLow = [
     '#layers',
     '#unit',

@@ -3,7 +3,6 @@ import { dragExportableEvents } from './dragExportable'
 import { layerEvents } from './layerEvents'
 import { zoomEvents } from './zoom'
 import { unitEvents } from './unit'
-import { noteEvents } from './notes'
 import { inspectorEvents } from './inspector'
 import { tabEvents } from './tab'
 import { sliceEvents } from './slices'
@@ -19,7 +18,6 @@ export function events () {
   artboardsEvents()
   zoomEvents()
   unitEvents()
-  noteEvents()
   inspectorEvents()
   tabEvents()
   sliceEvents()
