@@ -2,7 +2,7 @@
   <div>
    <div id="sketch">11111111</div>
   <aside class="inspector" id="inspector">
-    <div class="header-right"><div id="unit" class="unit-box" tabindex="0">XHDPI @2x (dp/sp)</div></div>
+    <!-- <div class="header-right"><div id="unit" class="unit-box" tabindex="0">XHDPI @2x (dp/sp)</div></div> -->
     <div  id="inspectorCenter"></div>
   </aside>
   </div>
@@ -17,7 +17,7 @@ export default {
       innerHTML,
       init,
       zoom,
-      unit,
+      // unit,
       artboards,
       slices,
       colors,
@@ -30,7 +30,7 @@ export default {
     state.zoom = 0.5
     document.querySelector('#sketch').innerHTML = innerHTML
     zoom()
-    unit()
+    // unit()
     artboards()
     slices()
     colors()

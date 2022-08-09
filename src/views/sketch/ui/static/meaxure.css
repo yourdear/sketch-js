@@ -838,6 +838,9 @@ main {
     line-height: 32px;
     font-weight: 700;
     padding: 0 16px;
+    text-align: left;
+    margin-top: 20px;
+    overflow: hidden;
     /* background-image: linear-gradient(90deg, rgba(0, 4, 9, .32) 0, rgba(0, 2, 4, 0) 100%); */
 }
 
@@ -858,6 +861,7 @@ main {
     font-size: 16px;
     height: 36px;
     line-height: 36px;
+    text-align: left;
 }
 
 .inspector .color:last-child,

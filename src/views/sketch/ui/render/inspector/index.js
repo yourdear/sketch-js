@@ -13,7 +13,7 @@ export function inspector () {
   ) return false
   const layerData = state.current.layers[state.selectedIndex]
   const html = [
-    '<h2>' + layerData.name + '</h2>',
+    // '<h2>' + layerData.name + '</h2>',
     renderProperties(layerData),
     renderFills(layerData),
     renderFont(layerData),

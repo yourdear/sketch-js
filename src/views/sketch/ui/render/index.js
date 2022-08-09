@@ -2,7 +2,7 @@ import { localize, init, state } from '../common'
 import { artboards } from './artboards'
 import { slices } from './slices'
 import { colors } from './colors'
-import { unit } from './unit'
+// import { unit } from './unit'
 import { zoom } from './zoom'
 import { events } from '../events'
 import { navigateByURLHash } from '../events/navigate'
@@ -62,7 +62,7 @@ function render (data) {
     innerHTML,
     init,
     zoom,
-    unit,
+    // unit,
     artboards,
     slices,
     colors,

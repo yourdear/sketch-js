@@ -3,20 +3,20 @@ import { unitSize, unitBorderRadius } from '../helper'
 import { propertyType } from './shared'
 export function renderProperties (layerData) {
   const position = [
-    '<div class="item" data-label="' + localize('Position') + ':">',
+    '<div class="item" data-label="' + localize('Position') + '">',
     '<label data-label="' + localize('X') + '"><input id="position-x" type="text" value="' + unitSize(layerData.rect.x) + '" readonly="readonly"></label>',
     '<label data-label="' + localize('Y') + '"><input id="position-y" type="text" value="' + unitSize(layerData.rect.y) + '" readonly="readonly"></label>',
     '</div>'
   ].join('')
   const size = [
-    '<div class="item" data-label="' + localize('Size') + ':">',
+    '<div class="item" data-label="' + localize('Size') + '">',
     '<label data-label="' + localize('Width') + '"><input id="size-width" type="text" value="' + unitSize(layerData.rect.width) + '" readonly="readonly"></label>',
     '<label data-label="' + localize('Height') + '"><input id="size-height" type="text" value="' + unitSize(layerData.rect.height) + '" readonly="readonly"></label>',
     '</div>'
   ].join('')
   const opacity = (typeof layerData.opacity === 'number')
     ? [
-        '<div class="item" data-label="' + localize('Opacity') + ':">',
+        '<div class="item" data-label="' + localize('Opacity') + '">',
         '<label><input id="opacity" type="text" value="' + Math.round(layerData.opacity * 10000) / 100 + '%" readonly="readonly"></label>',
         '<label></label>',
         '</div>'
@@ -25,12 +25,12 @@ export function renderProperties (layerData) {
   const radius = (layerData.radius)
     ? ((layerData.radius.length >= 2)
         ? [
-            '<div class="item" data-label="' + localize('Radius') + ':">',
+            '<div class="item" data-label="' + localize('Radius') + '">',
             '<label><input id="radius" type="text" value="' + unitBorderRadius(layerData.radius, undefined) + '" readonly="readonly"></label>',
             '</div>'
           ].join('')
         : [
-            '<div class="item" data-label="' + localize('Radius') + ':">',
+            '<div class="item" data-label="' + localize('Radius') + '">',
             '<label><input id="radius" type="text" value="' + unitBorderRadius(layerData.radius, undefined) + '" readonly="readonly"></label>',
             '<label></label>',
             '</div>'
@@ -39,7 +39,7 @@ export function renderProperties (layerData) {
 
   const styleName = (layerData.styleName)
     ? [
-        '<div class="item" data-label="' + localize('Style') + ':">',
+        '<div class="item" data-label="' + localize('Style') + '">',
         '<label><input id="styleName" type="text" value="' + layerData.styleName + '" readonly="readonly"></label>',
         '</div>'
       ].join('')

@@ -2,7 +2,7 @@ import { artboardsEvents } from './artboards'
 import { dragExportableEvents } from './dragExportable'
 import { layerEvents } from './layerEvents'
 import { zoomEvents } from './zoom'
-import { unitEvents } from './unit'
+// import { unitEvents } from './unit'
 import { inspectorEvents } from './inspector'
 import { tabEvents } from './tab'
 import { sliceEvents } from './slices'
@@ -17,7 +17,7 @@ export function events () {
   layerEvents()
   artboardsEvents()
   zoomEvents()
-  unitEvents()
+  // unitEvents()
   inspectorEvents()
   tabEvents()
   sliceEvents()

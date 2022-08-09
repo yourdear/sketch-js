@@ -6,7 +6,7 @@ export function renderFills (layerData) {
   const fillsData = layerData.fills
   for (let i = fillsData.length - 1; i >= 0; i--) {
     const fill = fillsData[i]
-    fills.push('<div class="item items-group" data-label="' + localize(fill.fillType) + ':">')
+    fills.push('<div class="item items-group" data-label="' + localize(fill.fillType) + '">')
     if (fill.fillType.toLowerCase() == 'color') {
       fills.push(colorItem(fill.color))
     } else {

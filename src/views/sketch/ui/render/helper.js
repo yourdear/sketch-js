@@ -82,7 +82,7 @@ function unitProperBorderRadius (name) {
   for (let i = 0; i < name.length; i++) {
     Radius.push(unitSize(name[i]))
   }
-  return Radius.join(' ') + ';'
+  return Radius.join(' ') + ''
 }
 // unit Width height
 function unitWidthHeight (layerData, value) {
