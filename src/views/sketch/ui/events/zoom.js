@@ -7,9 +7,9 @@ import { hideDistance } from './distance'
 import { eventDelegate } from './delegate'
 import { alignElement, Edge } from './alignElement'
 
-export function zoomEvents() {
+export function zoomEvents () {
   const zoomer = document.querySelector('#zoom')
-  eventDelegate(zoomer, 'click', '.zoom-in:not(disabled), .zoom-out:not(disabled)', function(event) {
+  eventDelegate(zoomer, 'click', '.zoom-in:not(disabled), .zoom-out:not(disabled)', function (event) {
     if (this.classList.contains('zoom-in')) {
       zoomRender(state.zoom - 0.25)
     } else {
@@ -17,12 +17,12 @@ export function zoomEvents() {
     }
     event.stopPropagation()
   })
-  document.querySelector('.zoom-text').addEventListener('click', function(event) {
+  document.querySelector('.zoom-text').addEventListener('click', function (event) {
     zoomRender(1)
   })
 }
 
-export function zoomRender(val) {
+export function zoomRender (val) {
   state.targetIndex = undefined;
   (document.querySelector('#rulers')).style.display = 'none'
   hideDistance()
@@ -47,13 +47,13 @@ export function zoomRender(val) {
   viewer.scrollLeft += screenPoint2.x - screenPoint.x
   viewer.scrollTop += screenPoint2.y - screenPoint.y
   document.querySelectorAll('#layers, #notes').forEach(e => e.innerHTML = '')
-  setTimeout(function() {
+  setTimeout(function () {
     layers()
     notes()
   }, 150)
 }
 
-function screenPointOnViewerCenter(viewer, screen) {
+function screenPointOnViewerCenter (viewer, screen) {
   const viewerRect = viewer.getBoundingClientRect()
   const screenRect = screen.getBoundingClientRect()
   const viewerCenter = {

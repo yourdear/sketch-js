@@ -4,9 +4,9 @@ import { inspector } from '../render/inspector'
 import { slices } from '../render/slices'
 import { eventDelegate } from './delegate'
 
-export function unitEvents() {
+export function unitEvents () {
   const unit = document.querySelector('#unit')
-  eventDelegate(unit, 'change', 'input[name=resolution]', function(event) {
+  eventDelegate(unit, 'change', 'input[name=resolution]', function (event) {
     const checked = unit.querySelector('input[name=resolution]:checked')
     state.unit = checked.dataset.unit
     state.scale = Number(checked.dataset.scale)
@@ -16,7 +16,7 @@ export function unitEvents() {
     unit.querySelector('p').innerText = checked.dataset.name
     slices()
   })
-  eventDelegate(unit, 'click', 'h3, .overlay', function(event) {
+  eventDelegate(unit, 'click', 'h3, .overlay', function (event) {
     unit.blur()
   })
 }

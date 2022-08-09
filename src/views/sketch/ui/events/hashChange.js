@@ -2,8 +2,8 @@ import { navigateByURLHash, parseURLHash } from './navigate'
 import { state } from '../common'
 
 let shouldBackToAnother = false
-export function hashChangeEvents() {
-  window.addEventListener('hashchange', function(ev) {
+export function hashChangeEvents () {
+  window.addEventListener('hashchange', function (ev) {
     if (shouldBackToAnother) {
       const currentIndex = parseURLHash().artboardIndex
       if (currentIndex == state.artboardIndex) {
@@ -16,6 +16,6 @@ export function hashChangeEvents() {
     navigateByURLHash(false)
   })
 }
-export function setShouldBackToAnother(value) {
+export function setShouldBackToAnother (value) {
   shouldBackToAnother = value
 }

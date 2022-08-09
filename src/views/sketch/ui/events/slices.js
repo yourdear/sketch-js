@@ -3,17 +3,17 @@ import { message } from '../render/helper'
 import { localize } from '../common'
 import { eventDelegate } from './delegate'
 
-export function sliceEvents() {
+export function sliceEvents () {
   const slices = document.querySelector('#slices')
-  eventDelegate(slices, 'mouseover', 'li', function(event) {
+  eventDelegate(slices, 'mouseover', 'li', function (event) {
     document.querySelectorAll('.layer-' + this.dataset.objectid)
       .forEach(div => div.classList.add('has-slice'))
   })
-  eventDelegate(slices, 'mouseout', 'li', function(event) {
+  eventDelegate(slices, 'mouseout', 'li', function (event) {
     document.querySelectorAll('.has-slice')
       .forEach(div => div.classList.remove('has-slice'))
   })
-  eventDelegate(slices, 'click', 'li', function(event) {
+  eventDelegate(slices, 'click', 'li', function (event) {
     const layercls = '.layer-' + this.dataset.objectid
     const instances = document.querySelectorAll(layercls)
     const instance = instances[0]

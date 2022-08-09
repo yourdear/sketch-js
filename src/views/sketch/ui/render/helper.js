@@ -1,14 +1,14 @@
 import { project, state } from '../common'
 
-export function zoomSize(size) {
+export function zoomSize (size) {
   return size * state.zoom / project.resolution
 }
 
-export function percentageSize(size, size2) {
+export function percentageSize (size, size2) {
   return (Math.round(size / size2 * 1000) / 10) + '%'
 }
 
-export function unitSize(value, isText) {
+export function unitSize (value, isText) {
   // logic point
   const pt = value / project.resolution
   // convert to display value
@@ -20,7 +20,7 @@ export function unitSize(value, isText) {
   }
   return sz + unit
 }
-export function unitCss(value) {
+export function unitCss (value) {
   const fontSize = /^font-size:/
   const borderRadius = /^border-radius:/
   const border = /^border:/
@@ -55,7 +55,7 @@ export function unitCss(value) {
   })
 }
 
-function unitCssName(name) {
+function unitCssName (name) {
   const p = name.replace(/[^\d.]/g, '')
   const pt = p / project.resolution
   const sz = Math.round(pt * state.scale * 100) / 100
@@ -64,7 +64,7 @@ function unitCssName(name) {
   return sz + unit + ';'
 }
 // unit BorderRadius
-export function unitBorderRadius(layerDataRadius, name) {
+export function unitBorderRadius (layerDataRadius, name) {
   if (layerDataRadius) {
     return unitProperBorderRadius(layerDataRadius)
   } else {
@@ -77,7 +77,7 @@ export function unitBorderRadius(layerDataRadius, name) {
     }
   }
 }
-function unitProperBorderRadius(name) {
+function unitProperBorderRadius (name) {
   const Radius = []
   for (let i = 0; i < name.length; i++) {
     Radius.push(unitSize(name[i]))
@@ -85,13 +85,13 @@ function unitProperBorderRadius(name) {
   return Radius.join(' ') + ';'
 }
 // unit Width height
-function unitWidthHeight(layerData, value) {
+function unitWidthHeight (layerData, value) {
   const results = value == 'width' ? unitSize(layerData.rect.width) : unitSize(layerData.rect.height)
   return results + ';'
 }
 
 // border
-function unitBorder(layerData, e) {
+function unitBorder (layerData, e) {
   const borders = []
   if (layerData.borders != undefined) {
     for (let i = layerData.borders.length - 1; i >= 0; i--) {
@@ -104,7 +104,7 @@ function unitBorder(layerData, e) {
   }
 }
 // Box-Shadow
-function unitBoxShadow(layerData, e) {
+function unitBoxShadow (layerData, e) {
   const shadows = []
   if (layerData.shadows) {
     for (let i = layerData.shadows.length - 1; i >= 0; i--) {
@@ -119,7 +119,7 @@ function unitBoxShadow(layerData, e) {
 }
 
 let msgTimeout
-export function message(msg) {
+export function message (msg) {
   const message = document.querySelector('#message')
   message.innerText = msg
   message.style.display = 'inherit'

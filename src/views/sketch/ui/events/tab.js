@@ -1,10 +1,10 @@
 import { eventDelegate } from './delegate'
 
-export function tabEvents() {
+export function tabEvents () {
   const tab = document.querySelector('.header-left .tab')
   const navbar = document.querySelector('.navbar')
   const showBtn = document.querySelector('.showBtn')
-  eventDelegate(tab, 'click', 'li', function(event) {
+  eventDelegate(tab, 'click', 'li', function (event) {
     const current = tab.querySelector('.current')
     if (this === current) {
       // this.classList.remove('current');
@@ -24,7 +24,7 @@ export function tabEvents() {
     (navbar.querySelector('#' + id)).style.display = ''
   })
 
-  showBtn.addEventListener('click', function(event) {
+  showBtn.addEventListener('click', function (event) {
     const on = navbar.classList.contains('on')
     if (on) {
       showBtnNav(false)
@@ -34,7 +34,7 @@ export function tabEvents() {
   })
 }
 
-export function hideNavBar() {
+export function hideNavBar () {
   const tab = document.querySelector('.header-left .tab')
   if (tab.querySelector('.current')) {
     tab.querySelector('.current').classList.remove('current')
@@ -42,13 +42,13 @@ export function hideNavBar() {
 
   showBtnNav(false)
 }
-export function showNavBar() {
+export function showNavBar () {
   const tab = document.querySelector('.icon-artboards')
   tab.classList.add('current')
   showBtnNav(true)
 }
 
-export function showBtnNav(even) {
+export function showBtnNav (even) {
   const navbar = document.querySelector('.navbar')
   const showBtn = document.querySelector('.showBtn')
   if (even) {

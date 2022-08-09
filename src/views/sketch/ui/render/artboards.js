@@ -1,7 +1,6 @@
-import { project, timestamp, localize } from '../common'
-import { state } from '../common'
+import { project, timestamp, localize, state } from '../common'
 
-export function artboards() {
+export function artboards () {
   const artboardListHTML = []
   const pagesSelect = []
   const flowStarts = []
@@ -20,21 +19,21 @@ export function artboards() {
     const imageData = (artboard.imageBase64) ? artboard.imageBase64 : artboard.imageIconPath + '?' + timestamp
     const artboardLiBody = `<picture class="preview-img" data-name="${artboard.name}">` +
             `<img alt="${artboard.name}" src="${imageData}">` +
-            `</picture>` +
-            `<div>` +
+            '</picture>' +
+            '<div>' +
             `<h3>${artboard.name}</h3>` +
             `<small>${artboard.pageName}</small>` +
-            `</div>`
+            '</div>'
     artboardListHTML.push(
       `<li id="artboard-${index}" class="artboard${classNames}" data-page-id="${artboard.pageObjectID}" data-id="${artboard.objectID}" data-index="${index}" >` +
             artboardLiBody +
-            `</li>`
+            '</li>'
     )
     if (artboard.flowStartPoint) {
       flowStarts.push(
         `<li id="startpoint-${index}" class="artboard${classNames}" data-page-id="${artboard.pageObjectID}" data-id="${artboard.objectID}" data-index="${index}" >` +
             artboardLiBody +
-            `</li>`
+            '</li>'
       )
     }
   })
@@ -43,7 +42,7 @@ export function artboards() {
     '<div class="pages-select" tabindex="0">',
     `<h3>${localize('All artboards')} <em>(${project.artboards.length})</em></h3>`,
     '<ul class="page-list">',
-    `<li><label><input type="radio" name="page" value="all" checked="checked"><span>${localize('All artboards')} <em>(${project.artboards.length})</em></span></label></li>`,
+    `<li><label><input type="radio" name="page" value="all" checked="checked"><span>${localize('All artboards')} <em>(${project.artboards.length})</em></span></label></li>`
   )
   Object.keys(pagesData).forEach(
     objectID => {
@@ -60,11 +59,11 @@ export function artboards() {
       '<div class="title">',
       `<h3>${localize('Start points')} <em>(${flowStarts.length})</em></h3>`,
       '</div>',
-      '<ul class="artboard-list">',
+      '<ul class="artboard-list">'
     )
     flowStarts.push(
       '</ul>',
-      '</div>',
+      '</div>'
     )
   }
 

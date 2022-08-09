@@ -1,6 +1,6 @@
-import { state } from '../common'
-import { localize } from '../common'
-export function unit() {
+import { state, localize } from '../common'
+
+export function unit () {
   const unitsData = [
     {
       name: localize('Device switch'),
@@ -43,7 +43,7 @@ export function unit() {
   unitsData.forEach(data => {
     if (data.name) unitList.push('<li class="sub-title">' + localize(data.name) + '</li>')
     data.units.forEach(unit => {
-      var checked = ''
+      let checked = ''
       if (!hasCurrent && unit.unit == state.unit) {
         checked = ' checked="checked"'
         hasCurrent = localize(unit.name)

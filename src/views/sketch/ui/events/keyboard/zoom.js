@@ -2,7 +2,7 @@ import { clickElement } from '../helper'
 import { state } from '../../common'
 import { zoomRender } from '../zoom'
 
-export function keyboardZoomEvents() {
+export function keyboardZoomEvents () {
   window.addEventListener('keydown', event => {
     // control or command key
     if (!event.ctrlKey && !event.metaKey) return

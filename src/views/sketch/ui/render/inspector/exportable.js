@@ -1,10 +1,10 @@
 import { propertyType } from './shared'
-export function renderExportable(layerData) {
+export function renderExportable (layerData) {
   if (!layerData.exportable || !layerData.exportable.length) { return '' }
-  var expHTML = []
+  const expHTML = []
   expHTML.push('<ul class="exportable">')
   layerData.exportable.forEach(exportable => {
-    var filePath = exportable.path
+    const filePath = exportable.path
     expHTML.push('<li>', '<a href="' + filePath +
         '"target="_blank" download ' +
         'data-format="' + exportable.format.toUpperCase() +

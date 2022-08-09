@@ -6,14 +6,14 @@ import { alignElement, Edge } from './alignElement'
 
 export var flowMode = undefined
 
-export function flowEvents() {
+export function flowEvents () {
   flowModeSwitchEvents()
   flowClickEvents()
 }
 
-function flowClickEvents() {
+function flowClickEvents () {
   const flows = document.querySelector('#flows')
-  flows.addEventListener('click', function(event) {
+  flows.addEventListener('click', function (event) {
     removeSelected()
     hideNavBar()
     const target = getEventTarget(flows, event, '.flow')
@@ -35,14 +35,14 @@ function flowClickEvents() {
   })
 }
 
-function flowModeSwitchEvents() {
-  document.querySelector('#flow-mode').addEventListener('change', function() {
+function flowModeSwitchEvents () {
+  document.querySelector('#flow-mode').addEventListener('change', function () {
     setFlowMode((this).checked)
     updateURLHash()
   })
 }
 
-export function setFlowMode(enabled) {
+export function setFlowMode (enabled) {
   flowMode = enabled
   const viewer = document.querySelector('.screen-viewer')
   const screen = document.querySelector('#screen')

@@ -1,6 +1,6 @@
 import { clickElement } from '../helper'
 
-export function keyboardSwitchEvents() {
+export function keyboardSwitchEvents () {
   window.addEventListener('keydown', event => {
     switch (String.fromCharCode(event.which)) {
       case 'F':

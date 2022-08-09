@@ -4,8 +4,8 @@ import { inspector } from '../render/inspector'
 import { distance, hideDistance } from './distance'
 import { panMode } from './panMode'
 
-export function layerEvents() {
-  document.body.addEventListener('click', function(event) {
+export function layerEvents () {
+  document.body.addEventListener('click', function (event) {
     if (panMode) return
     if (getEventTarget(document.body, event, 'header, #inspector, .navbar')) {
       event.stopPropagation()
@@ -13,7 +13,7 @@ export function layerEvents() {
     }
     const target = event.target
     if (target.classList.contains('layer') || target.classList.contains('slice-layer')) {
-      var selected = (!target.classList.contains('slice-layer'))
+      const selected = (!target.classList.contains('slice-layer'))
         ? target
         : document.querySelector('.layer-' + target.dataset.objectid)
       state.selectedIndex = getIndex(selected)
@@ -25,7 +25,7 @@ export function layerEvents() {
     }
     removeSelected()
   })
-  document.body.addEventListener('mousemove', function(event) {
+  document.body.addEventListener('mousemove', function (event) {
     if (panMode) return
     mouseoutLayer()
     hideDistance()
@@ -44,9 +44,9 @@ export function layerEvents() {
     }
   })
 }
-function mouseoverLayer() {
+function mouseoverLayer () {
   if (state.targetIndex && state.selectedIndex == state.targetIndex) return false
-  var target = document.querySelector('#layer-' + state.targetIndex)
+  const target = document.querySelector('#layer-' + state.targetIndex)
   target.classList.add('hover')
   const rv = (document.querySelector('#rv'))
   rv.style.left = target.offsetLeft + 'px'
@@ -57,7 +57,7 @@ function mouseoverLayer() {
   (document.querySelector('#rulers')).style.display = ''
 }
 
-function getEdgeRect(event) {
+function getEdgeRect (event) {
   const screen = document.querySelector('#screen')
   const rect = screen.getBoundingClientRect()
   let x = (event.pageX - rect.left) / state.zoom

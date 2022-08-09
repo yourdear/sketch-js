@@ -1,7 +1,7 @@
-import { state } from '../../common'
-import { localize, project } from '../../common'
-export function colorItem(color) {
-  var colorName = (project.colorNames) ? project.colorNames[color['argb-hex']] : ''
+import { state, localize, project } from '../../common'
+
+export function colorItem (color) {
+  let colorName = (project.colorNames) ? project.colorNames[color['argb-hex']] : ''
   colorName = (colorName) ? ' data-name="' + colorName + '"' : ''
   return [
     '<div class="color"' + colorName + '>',
@@ -9,8 +9,8 @@ export function colorItem(color) {
     '</div>'
   ].join('')
 }
-export function propertyType(title, content, isCode) {
-  var nopadding = isCode ? ' style="padding:0"' : ''
+export function propertyType (title, content, isCode) {
+  const nopadding = isCode ? ' style="padding:0"' : ''
   return ['<section>',
     '<h3>' + localize(title) + '</h3>',
     '<div class="context"' + nopadding + '>',

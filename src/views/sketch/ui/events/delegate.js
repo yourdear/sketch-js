@@ -1,4 +1,4 @@
-export function eventDelegate(
+export function eventDelegate (
   parent,
   type,
   target,
@@ -12,7 +12,7 @@ export function eventDelegate(
     return
   }
   parent.addEventListener(type, wrappedListener)
-  function wrappedListener(event) {
+  function wrappedListener (event) {
     let targetElement = event.target
     const parentElement = event.currentTarget
     while (targetElement !== parentElement) {

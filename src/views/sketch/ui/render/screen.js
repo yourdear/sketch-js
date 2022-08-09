@@ -2,7 +2,7 @@ import { state, timestamp } from '../common'
 import { zoomSize } from './helper'
 import { flowMode } from '../events/flow'
 
-export function updateScreen(resetScroll) {
+export function updateScreen (resetScroll) {
   const imageData = (state.current.imageBase64) ? state.current.imageBase64 : state.current.imagePath + '?' + timestamp
   const screen = document.querySelector('#screen')
   const viewerInner = screen.parentElement

@@ -3,12 +3,12 @@ import { zoomSize, percentageSize, unitSize } from './helper'
 import { SMType } from '../meaxure/enum'
 
 export var MapArtboardIDToIndex
-export function layers() {
+export function layers () {
   specLayers()
   flowLayers()
 }
 
-function specLayers() {
+function specLayers () {
   const layersHTML = []
   state.current.layers.forEach((layer, index) => {
     if (layer.type == SMType.group || layer.type == SMType.hotspot) return
@@ -36,11 +36,11 @@ function specLayers() {
   document.querySelector('#layers').innerHTML = layersHTML.join('')
 }
 
-function flowLayers() {
+function flowLayers () {
   MapArtboardIDToIndex = project.artboards.reduce((p, c, i) => {
     p[c.objectID] = i
     return p
-  }, { 'back': -1 })
+  }, { back: -1 })
   const layersHTML = []
   state.current.layers.filter(layer => layer.flow && MapArtboardIDToIndex[layer.flow.targetId] !== undefined)
     .forEach((layer, index) => {

@@ -1,11 +1,11 @@
-import { state } from '../common'
-import { project } from '../common'
-export function colors() {
+import { state, project } from '../common'
+
+export function colors () {
   if (!project.colors) {
     return false
   }
   if (!project.colorNames) { project.colorNames = {} }
-  var colorListHTML = []
+  const colorListHTML = []
   colorListHTML.push('<ul class="color-list">')
   project.colors.forEach((color, index) => {
     project.colorNames[color.color['argb-hex']] = color.name

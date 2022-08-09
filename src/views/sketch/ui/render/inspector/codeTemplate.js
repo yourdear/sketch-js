@@ -2,20 +2,20 @@ import { unitSize, unitCss } from '../helper'
 import { scaleSize } from '../../events/helper'
 import { propertyType } from './shared'
 
-export function renderCodeTemplate(layerData) {
+export function renderCodeTemplate (layerData) {
   if (!layerData.css || !layerData.css.length) return ''
-  var tab = ['<ul class="tab" id="code-tab" >',
+  const tab = ['<ul class="tab" id="code-tab" >',
     '<li class="icon-css-panel" data-id="css-panel" data-codeType="css"></li>',
     '<li class="icon-android-panel" data-id="android-panel" data-codeType="android" ></li>',
     '<li class="icon-ios-panel" data-id="ios-panel" data-codeType="ios" ></li>',
     '</ul>'
   ].join('')
-  var css = [
+  const css = [
     '<div id="css-panel" class="code-item item">',
     '<label><textarea id="css" rows="' + (layerData.css.length + 1) + '" readonly="readonly">' + unitCss(layerData.css).join('\r\n') + '</textarea></label>',
     '</div>'
   ].join('')
-  var android = []
+  const android = []
   if (layerData.type == 'text') {
     android.push('<div id="android-panel"  class="code-item item">', '<label><textarea id="css" rows="6" readonly="readonly">' +
             '&lt;TextView\r\n' + getAndroidWithHeight(layerData) +
@@ -32,7 +32,7 @@ export function renderCodeTemplate(layerData) {
             getAndroidImageSrc(layerData) + '/&gt;' +
             '</textarea></label>', '</div>')
   }
-  var ios = []
+  const ios = []
   if (layerData.type == 'text') {
     ios.push('<div id="ios-panel"  class="code-item item">', '<label><textarea id="css" rows="6" readonly="readonly">' +
             'UILabel *label = [[UILabel alloc] init];\r\n' +
@@ -57,16 +57,16 @@ export function renderCodeTemplate(layerData) {
             getIOSImageSrc(layerData) +
             '</textarea></label>', '</div>')
   }
-  var copyAll = ["<div class='copyAll'>copyAllCode</div>"]
+  const copyAll = ["<div class='copyAll'>copyAllCode</div>"]
   return propertyType('CODE TEMPLATE', [tab, css, android.join(''), ios.join(''), copyAll].join(''), true)
 }
-function getAndroidWithHeight(layerData) {
+function getAndroidWithHeight (layerData) {
   return 'android:layout_width="' + unitSize(layerData.rect.width, false) + '"\r\n' + 'android:layout_height="' + unitSize(layerData.rect.height, false) + '"\r\n'
 }
-function getAndroidShapeBackground(layerData) {
-  var colorCode = ''
+function getAndroidShapeBackground (layerData) {
+  const colorCode = ''
   if (layerData.type != 'shape' || typeof (layerData.fills) === 'undefined' || layerData.fills.length == 0) return colorCode
-  var f
+  let f
   for (f in layerData.fills) {
     if (layerData.fills[f].fillType.toLowerCase() == 'color') {
       return 'android:background="' + layerData.fills[f].color['argb-hex'] + '"\r\n'
@@ -74,14 +74,14 @@ function getAndroidShapeBackground(layerData) {
   }
   return colorCode
 }
-function getAndroidImageSrc(layerData) {
+function getAndroidImageSrc (layerData) {
   if (layerData.type != 'slice' || typeof (layerData.exportable) === 'undefined') return ''
   return 'android:src="\@mipmap/' + layerData.exportable[0].name + '.' + layerData.exportable[0].format + '"\r\n'
 }
-function getIOSShapeBackground(layerData) {
-  var colorCode = ''
+function getIOSShapeBackground (layerData) {
+  const colorCode = ''
   if (layerData.type != 'shape' || typeof (layerData.fills) === 'undefined' || layerData.fills.length == 0) return colorCode
-  var f
+  let f
   for (f in layerData.fills) {
     if (layerData.fills[f].fillType.toLowerCase() == 'color') {
       return 'view.backgroundColor = [UIColor colorWithRed:' + layerData.fills[f].color.rgb.r + '/255.0 green:' + layerData.fills[f].color.rgb.g + '/255.0 blue:' + layerData.fills[f].color.rgb.b + '/255.0 alpha:' + layerData.fills[f].color.alpha + '/255.0]\;\r\n'
@@ -89,7 +89,7 @@ function getIOSShapeBackground(layerData) {
   }
   return colorCode
 }
-function getIOSImageSrc(layerData) {
+function getIOSImageSrc (layerData) {
   if (layerData.type != 'slice' || typeof (layerData.exportable) === 'undefined') return ''
   return 'imageView.image = [UIImage imageNamed:\@"' + layerData.exportable[0].name + '.' + layerData.exportable[0].format + '"];\r\n'
 }

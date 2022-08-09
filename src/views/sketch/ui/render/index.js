@@ -8,7 +8,7 @@ import { events } from '../events'
 import { navigateByURLHash } from '../events/navigate'
 import { allAtlasMethod } from '../render/atlas'
 
-function render(data) {
+function render (data) {
   const innerHTML = [
     '<header class="sketch-header">',
     '<div class="header-center">',

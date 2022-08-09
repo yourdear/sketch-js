@@ -7,7 +7,7 @@ import { renderFont } from './font'
 import { renderExportable } from './exportable'
 import { renderFills } from './fills'
 
-export function inspector() {
+export function inspector () {
   if (state.selectedIndex === undefined ||
         (!state.current && !state.current.layers && !state.current.layers[state.selectedIndex])
   ) return false
@@ -34,7 +34,7 @@ export function inspector() {
     inspector.querySelector('#' + li.getAttribute('data-id')).classList.add('select')
   }
   document.querySelectorAll('#code-tab li').forEach(
-    li => li.addEventListener('click', function() {
+    li => li.addEventListener('click', function () {
       const target = this
       const id = target.getAttribute('data-id')
       state.codeType = target.getAttribute('data-codeType')

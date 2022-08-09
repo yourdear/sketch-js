@@ -2,14 +2,14 @@ import { mouseoutLayer } from './helper'
 import { hideDistance } from './distance'
 import { eventDelegate } from './delegate'
 
-export function noteEvents() {
+export function noteEvents () {
   const notes = document.querySelector('#notes')
   document.querySelector('#show-notes')
-    .addEventListener('change', function() {
+    .addEventListener('change', function () {
       const target = this
       notes.style.display = target.checked ? '' : 'none'
     })
-  eventDelegate(notes, 'mousemove', '.note', function(event) {
+  eventDelegate(notes, 'mousemove', '.note', function (event) {
     mouseoutLayer()
     hideDistance()
     const note = this.querySelector('div')
@@ -20,7 +20,7 @@ export function noteEvents() {
     }
     event.stopPropagation()
   })
-  notes.addEventListener('mouseout', function(event) {
+  notes.addEventListener('mouseout', function (event) {
     notes.querySelectorAll('.note div').forEach(div => {
       div.style.display = 'none'
     }

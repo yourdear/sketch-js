@@ -1,8 +1,8 @@
 import { localize } from '../../common'
 import { colorItem, propertyType } from './shared'
-export function renderFills(layerData) {
+export function renderFills (layerData) {
   if (!layerData.fills || !layerData.fills.length) { return '' }
-  var fills = []
+  const fills = []
   const fillsData = layerData.fills
   for (let i = fillsData.length - 1; i >= 0; i--) {
     const fill = fillsData[i]

@@ -7,7 +7,7 @@ export const Edge = {
   hcenter: 0b000001
 }
 
-export function alignElement(options) {
+export function alignElement (options) {
   const fromRect = options.fromRect || options.target.getBoundingClientRect()
   const from = options.fromEdge
   const to = options.toEdge
