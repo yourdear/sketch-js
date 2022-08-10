@@ -1,7 +1,7 @@
 import { gotoArtboard, updateURLHash, historyBackUntilAnotherArtboard } from './navigate'
 import { getEventTarget, removeSelected } from './helper'
 import { updateScreen } from '../render/screen'
-import { hideNavBar, showNavBar } from './tab'
+// import { hideNavBar, showNavBar } from './tab'
 import { alignElement, Edge } from './alignElement'
 
 export let flowMode
@@ -15,7 +15,7 @@ function flowClickEvents () {
   const flows = document.querySelector('#flows')
   flows.addEventListener('click', function (event) {
     removeSelected()
-    hideNavBar()
+    // hideNavBar()
     const target = getEventTarget(flows, event, '.flow')
     if (!target) {
       flows.classList.remove('show-flows')
@@ -79,10 +79,10 @@ export function setFlowMode (enabled) {
   if (flowMode) {
     screen.classList.add('flow')
     removeSelected()
-    hideNavBar()
+    // hideNavBar()
   } else {
     screen.classList.remove('flow')
-    showNavBar()
+    // showNavBar()
   }
   updateScreen()
   alignElement({

@@ -1,12 +1,12 @@
-import { localize, init, state } from '../common'
-import { artboards } from './artboards'
-import { slices } from './slices'
-import { colors } from './colors'
+import { init, state } from '../common'
+// import { artboards } from './artboards'
+// import { slices } from './slices'
+// import { colors } from './colors'
 // import { unit } from './unit'
 import { zoom } from './zoom'
 import { events } from '../events'
 import { navigateByURLHash } from '../events/navigate'
-import { allAtlasMethod } from '../render/atlas'
+// import { allAtlasMethod } from '../render/atlas'
 
 function render (data) {
   const innerHTML = [
@@ -21,21 +21,21 @@ function render (data) {
     '</div>',
     '</header>',
     '<main>',
-    '<aside class="navbar on" style="display: none;">',
-    '<div class="header-left">',
-    '<div class="showBtn"></div>',
-    '<ul class="tab">',
-    '<li class="icon-artboards current" data-id="artboards"></li>',
-    '<li class="icon-slices" data-id="slices"></li>',
-    '<li class="icon-colors" data-id="colors"></li>',
-    '</ul>',
-    '</div>',
-    '<div class="section-view">',
-    '<section id="artboards"></section>',
-    `<section id="slices" style="display: none;"><div class="empty">${localize('No slices added!')}</div></section>`,
-    `<section id="colors" style="display: none;"><div class="empty">${localize('No colors added!')}</div></section>`,
-    '</div>',
-    '</aside>',
+    // '<aside class="navbar on" style="display: none;">',
+    // '<div class="header-left">',
+    // '<div class="showBtn"></div>',
+    // '<ul class="tab">',
+    // '<li class="icon-artboards current" data-id="artboards"></li>',
+    // '<li class="icon-slices" data-id="slices"></li>',
+    // '<li class="icon-colors" data-id="colors"></li>',
+    // '</ul>',
+    // '</div>',
+    // '<div class="section-view">',
+    // '<section id="artboards"></section>',
+    // `<section id="slices" style="display: none;"><div class="empty">${localize('No slices added!')}</div></section>`,
+    // `<section id="colors" style="display: none;"><div class="empty">${localize('No colors added!')}</div></section>`,
+    // '</div>',
+    // '</aside>',
     '<section class="screen-viewer">',
     '<div class="screen-viewer-inner">',
     '<div id="screen" class="screen">',
@@ -63,12 +63,12 @@ function render (data) {
     init,
     zoom,
     // unit,
-    artboards,
-    slices,
-    colors,
+    // artboards,
+    // slices,
+    // colors,
     events,
     navigateByURLHash,
-    allAtlasMethod,
+    // allAtlasMethod,
     state
   }
 }

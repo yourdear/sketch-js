@@ -1,11 +1,11 @@
-import { artboardsEvents } from './artboards'
+// import { artboardsEvents } from './artboards'
 import { dragExportableEvents } from './dragExportable'
 import { layerEvents } from './layerEvents'
 import { zoomEvents } from './zoom'
 // import { unitEvents } from './unit'
 import { inspectorEvents } from './inspector'
-import { tabEvents } from './tab'
-import { sliceEvents } from './slices'
+// import { tabEvents } from './tab'
+// import { sliceEvents } from './slices'
 import { panModeEvents } from './panMode'
 import { percentageModeEvents } from './percentageMode'
 import { keyboardZoomEvents } from './keyboard/zoom'
@@ -15,12 +15,12 @@ import { keyboardSwitchEvents } from './keyboard/switch'
 
 export function events () {
   layerEvents()
-  artboardsEvents()
+  // artboardsEvents()
   zoomEvents()
   // unitEvents()
   inspectorEvents()
-  tabEvents()
-  sliceEvents()
+  // tabEvents()
+  // sliceEvents()
   panModeEvents()
   percentageModeEvents()
   keyboardZoomEvents()

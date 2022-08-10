@@ -18,25 +18,25 @@ export default {
       init,
       zoom,
       // unit,
-      artboards,
-      slices,
-      colors,
+      // artboards,
+      // slices,
+      // colors,
       events,
       navigateByURLHash,
-      state,
-      allAtlasMethod
+      state
+      // allAtlasMethod
     } = render()
     init(jsondata)
     state.zoom = 0.5
     document.querySelector('#sketch').innerHTML = innerHTML
     zoom()
     // unit()
-    artboards()
-    slices()
-    colors()
+    // artboards()
+    // slices()
+    // colors()
     events()
     navigateByURLHash(false)
-    allAtlasMethod()
+    // allAtlasMethod()
   },
   beforeDestroy () {
     window.removeEventListener('mousemove', () => {}, false)
