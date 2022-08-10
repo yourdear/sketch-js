@@ -11,8 +11,14 @@ export function colorItem (color) {
 }
 export function propertyType (title, content, isCode) {
   const nopadding = isCode ? ' style="padding:0"' : ''
+  const iscodeDiv = isCode
+    ? `<div class="code-title">
+    <h3 class="inline-h3">${localize(title)}</h3>
+    <div class="copyAll">复制代码</div>
+  </div>`
+    : `<h3>${localize(title)}</h3>`
   return ['<section>',
-    '<h3>' + localize(title) + '</h3>',
+    iscodeDiv,
     '<div class="context"' + nopadding + '>',
     content,
     '</div>',

@@ -3066,7 +3066,7 @@ export const jsondata = {
       BORDERS: '边框',
       SHADOWS: '阴影',
       'CSS STYLE': 'CSS 样式',
-      'CODE TEMPLATE': '代码模板',
+      'CODE TEMPLATE': '代码',
       EXPORTABLE: '切图',
       Gradient: '渐变',
       Color: '颜色',

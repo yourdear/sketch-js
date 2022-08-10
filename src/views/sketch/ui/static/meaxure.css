@@ -422,9 +422,34 @@ main {
 .tab li.icon-colors:before {
     background-position-y: -100px;
 }
+#inspector .code-title {
+    display: flex;
+    margin-top: 20px;
+    padding-right: 20px;
+    justify-content: space-between;
+}
+.code-title .inline-h3 {
+    margin-top: 0;
 
+}
+.code-title .copyAll {
+    padding: 0 19px;
+    display: inline-block;
+    border-radius: 16px;
+    background: rgba(40, 120, 255, 0.15);
+    cursor: pointer;
+    color: #2878ff;
+    line-height: 32px;
+    position: relative;
+    top: 4px;
+    font-weight: 500;
+}
+.code-title .copyAll:hover{
+    background: rgba(40, 120, 255, 0.1);
+}
 #inspector .code-item {
-    display: none !important;
+    /* display: none !important; */
+    margin: 10px 15px;
 }
 
 #inspector .code-item textarea {

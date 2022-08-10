@@ -28,8 +28,8 @@ export function inspectorEvents () {
   }
   $('.inspector').mousedown(function () {
     $('.copyAll').click(function () {
-      copy('.select #css')
-      message('---✅ - ( ´´ิ∀´ิ` ) - 复制成功 ---')
+      copy('#css-panel #css')
+      message('复制成功')
     })
   })
 }
