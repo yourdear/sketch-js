@@ -12,7 +12,7 @@ export function slices () {
       const asset = JSON.parse(JSON.stringify(sliceLayer.exportable)).pop()
       sliceListHTML.push(
         '<li id="slice-' + sliceLayer.objectID + '" class="slice-layer" data-objectId="' + sliceLayer.objectID + '">',
-        '<picture><img src="' + 'assets/' + asset.path + '" alt=""></picture>',
+        '<picture><img src="' + asset.path + '" alt=""></picture>',
         '<div>',
         '<h3>' + sliceLayer.name + '</h3>',
         '<small>' + unitSize(sliceLayer.rect.width) + ' × ' + unitSize(sliceLayer.rect.height) + '</small>',

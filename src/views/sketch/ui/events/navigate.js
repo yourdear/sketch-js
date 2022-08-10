@@ -7,7 +7,7 @@ import { flowMode, setFlowMode } from './flow'
 import { removeSelected } from './helper'
 import { setShouldBackToAnother } from './hashChange'
 
-export function gotoArtboard(para, updateHash = true) {
+export function gotoArtboard (para, updateHash = true) {
   setShouldBackToAnother(false)
   let index
   if (typeof para === 'number') {
@@ -41,7 +41,7 @@ export function gotoArtboard(para, updateHash = true) {
   document.title = state.current.name + ' - Sketch MeaXure'
 }
 
-export function navigateByURLHash(updateHash = true) {
+export function navigateByURLHash (updateHash = true) {
   const setting = parseURLHash()
   gotoArtboard(setting.artboardIndex, false)
   if (flowMode !== setting.flowMode) {
@@ -50,22 +50,22 @@ export function navigateByURLHash(updateHash = true) {
   if (updateHash) updateURLHash()
 }
 
-export function updateURLHash() {
+export function updateURLHash () {
   const hash = getURLHash()
   if (window.location.hash == hash) return
   window.location.hash = hash
 }
 
-export function historyBackUntilAnotherArtboard() {
+export function historyBackUntilAnotherArtboard () {
   setShouldBackToAnother(true)
   history.back()
 }
 
-export function getURLHash() {
+export function getURLHash () {
   return `#${flowMode ? 'p' : 's'}${state.artboardIndex}`
 }
 
-export function parseURLHash() {
+export function parseURLHash () {
   const result = {
     flowMode: false,
     artboardIndex: 0

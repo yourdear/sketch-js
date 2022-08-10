@@ -67,6 +67,17 @@ function screenPointOnViewerCenter (viewer, screen) {
     y: viewerCenter.y - screenRect.y
   }
 }
+// 根据inspector展开与否改变zoom的位置
+export function changeZoomPosition (isInspectorExpand) {
+  const sketchHeader = document.querySelector('.sketch-header')
+  const inspector = document.querySelector('#inspector')
+  if (isInspectorExpand) {
+    sketchHeader.style.right = inspector.offsetWidth + 'px'
+    return
+  }
+  sketchHeader.style.right = '0px'
+}
+
 // 鼠标 + ctrl放大缩小设计图
 setTimeout(() => {
   const screenviewer = document.querySelector('.screen-viewer')

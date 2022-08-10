@@ -1,6 +1,6 @@
 import { state } from '../common'
 import { hideDistance } from './distance'
-
+import { changeZoomPosition } from './zoom'
 export function getEventTarget (eventNode, event, selector) {
   let current = event.target
   while (current && current !== eventNode) {
@@ -38,6 +38,7 @@ export function removeSelected () {
   document.querySelector('#layer-' + state.selectedIndex).classList.remove('selected');
   (document.querySelector('#rulers')).style.display = 'none'
   document.querySelector('#inspector').classList.remove('active')
+  changeZoomPosition(false)
   state.selectedIndex = undefined
   state.tempTargetRect = undefined
   hideDistance()

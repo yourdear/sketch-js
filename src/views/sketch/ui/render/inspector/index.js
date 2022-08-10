@@ -6,7 +6,7 @@ import { renderBorders } from './borders'
 import { renderFont } from './font'
 import { renderExportable } from './exportable'
 import { renderFills } from './fills'
-
+import { changeZoomPosition } from '../../events/zoom'
 export function inspector () {
   if (state.selectedIndex === undefined ||
         (!state.current && !state.current.layers && !state.current.layers[state.selectedIndex])
@@ -25,6 +25,7 @@ export function inspector () {
   const inspector = document.querySelector('#inspector')
   const inspectorCenter = document.querySelector('#inspectorCenter')
   inspector.classList.add('active')
+  changeZoomPosition(true)
   inspectorCenter.innerHTML = html.join('')
 
   // select previously used tab
