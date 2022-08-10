@@ -37,6 +37,10 @@ export default {
     events()
     navigateByURLHash(false)
     allAtlasMethod()
+  },
+  beforeDestroy () {
+    window.removeEventListener('mousemove', () => {}, false)
+    document.body.removeEventListener('mousemove', function bodymouseMove () {}, false)
   }
 }
 </script>

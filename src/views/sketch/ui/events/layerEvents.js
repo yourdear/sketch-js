@@ -25,7 +25,9 @@ export function layerEvents () {
     }
     removeSelected()
   })
-  document.body.addEventListener('mousemove', function (event) {
+  document.body.addEventListener('mousemove', function bodymouseMove (event) {
+    const screenView = document.querySelector('.screen-viewer')
+    if (!screenView) return
     if (panMode) return
     mouseoutLayer()
     hideDistance()

@@ -3067,7 +3067,7 @@ export const jsondata = {
       SHADOWS: '阴影',
       'CSS STYLE': 'CSS 样式',
       'CODE TEMPLATE': '代码模板',
-      EXPORTABLE: '导出',
+      EXPORTABLE: '切图',
       Gradient: '渐变',
       Color: '颜色',
       'Layer Name': '图层名称',
