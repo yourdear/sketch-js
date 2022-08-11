@@ -1,3 +1,4 @@
+// 选中layer点击alt键出现百分比
 export function percentageModeEvents () {
   window.addEventListener('keydown', event => {
     if (event.which !== 18) return

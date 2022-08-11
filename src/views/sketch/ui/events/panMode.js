@@ -2,6 +2,7 @@ import { mouseoutLayer } from './helper'
 import { hideDistance } from './distance'
 
 // export var panMode = false
+// 鼠标左键点击移动设计稿
 export function panModeEvents () {
   let moving = false
   let moveData

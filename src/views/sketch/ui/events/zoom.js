@@ -1,12 +1,13 @@
 import { state } from '../common'
 import { updateScreen } from '../render/screen'
 import { layers } from '../render/layers'
-import { notes } from '../render/notes'
+// import { notes } from '../render/notes'
 import { zoom as updateZoomControls } from '../render/zoom'
 import { hideDistance } from './distance'
 import { eventDelegate } from './delegate'
 import { alignElement, Edge } from './alignElement'
 
+// 设计稿放大缩小
 export function zoomEvents () {
   const zoomer = document.querySelector('#zoom')
   eventDelegate(zoomer, 'click', '.zoom-in:not(disabled), .zoom-out:not(disabled)', function (event) {
@@ -48,10 +49,11 @@ export function zoomRender (val) {
   })
   viewer.scrollLeft += screenPoint2.x - screenPoint.x
   viewer.scrollTop += screenPoint2.y - screenPoint.y
-  document.querySelectorAll('#layers, #notes').forEach(e => e.innerHTML = '')
+  // document.querySelectorAll('#layers, #notes').forEach(e => e.innerHTML = '')
+  document.querySelectorAll('#layers').forEach(e => e.innerHTML = '')
   setTimeout(function () {
     layers()
-    notes()
+    // notes()
   }, 150)
 }
 

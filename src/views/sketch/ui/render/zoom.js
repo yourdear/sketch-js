@@ -1,6 +1,5 @@
 import { state } from '../common'
 export function zoom () {
-  console.log(state, state.zoom)
   const zoomText = Math.floor(state.zoom * 100) + '%'
   // (state.zoom <= 0.01) ? zoomMethods(true, '.zoom-in') : zoomMethods(false, '.zoom-in')
   // (state.zoom >= 4) ? zoomMethods(true, '.zoom-out') : zoomMethods(false, '.zoom-out')

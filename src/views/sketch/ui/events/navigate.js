@@ -1,6 +1,6 @@
 import { project, state, localize } from '../common'
 import { layers, MapArtboardIDToIndex } from '../render/layers'
-import { notes } from '../render/notes'
+// import { notes } from '../render/notes'
 import { message } from '../render/helper'
 import { updateScreen } from '../render/screen'
 import { flowMode, setFlowMode } from './flow'
@@ -29,7 +29,7 @@ export function gotoArtboard (para, updateHash = true) {
   state.current = project.artboards[state.artboardIndex]
   updateScreen(true)
   layers()
-  notes()
+  // notes()
   document.querySelectorAll('.active').forEach(e => e.classList.remove('active'))
   if (document.querySelector('#artboard-' + index)) {
     document.querySelector('#artboard-' + index).classList.add('active')
