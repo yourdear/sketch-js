@@ -1262,6 +1262,12 @@ main {
     background-color: #ecf2fe;
     color: #306BFF;
 }
+.exportable .load-current-li .load-current-button:hover{
+    background-color: #337fff;
+}
+.exportable .load-all-li .load-all-button:hover{
+    background-color: rgba(40,120,255,0.15);
+}
 /* 切图样式结束 */
 
 .exportable .dragExp {
